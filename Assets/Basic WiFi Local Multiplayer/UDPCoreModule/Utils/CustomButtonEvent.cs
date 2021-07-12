@@ -36,25 +36,7 @@ public class CustomButtonEvent : MonoBehaviour {
 
 		Debug.Log("user down:");
 
-		if(FindObjectOfType(typeof(BoardManager)))
-		{
-          	BoardManager.instance.current_i = GetComponent<Tile>().i;
 		
-		    BoardManager.instance.current_j = GetComponent<Tile>().j;
-		
-		}
-
-		if(FindObjectOfType(typeof(ShooterNetworkManager)))
-		{
-          ShooterNetworkManager.instance.myPlayer.GetComponent<Player2DManager>().EnableKey (gameObject.name);
-		
-		}
-
-		if(FindObjectOfType(typeof(NetworkManager)))
-		{
-         	NetworkManager.instance.myPlayer.GetComponent<PlayerManager>().EnableKey (gameObject.name);
-		
-		}
 
 
 		if( onPress != null  ){
@@ -72,17 +54,6 @@ public class CustomButtonEvent : MonoBehaviour {
 
 		Debug.Log("user Up:");
 		
-		if(FindObjectOfType(typeof(ShooterNetworkManager)))
-		{
-          	ShooterNetworkManager.instance.myPlayer.GetComponent<Player2DManager>().DisableKey  (gameObject.name);
-		
-		}
-
-		if(FindObjectOfType(typeof(NetworkManager)))
-		{
-          	NetworkManager.instance.myPlayer.GetComponent<PlayerManager>().DisableKey (gameObject.name);
-		
-		}
 		if( onPress != null  ){
 			Debug.Log("OnPointUp");
 			onPress(this.gameObject, false);

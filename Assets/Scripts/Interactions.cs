@@ -6,28 +6,33 @@ using TMPro;
 public class Interactions : MonoBehaviour
 {
     public static Interactions instance;
-    public TextMeshPro IPText;
+
+    public GameObject ConnectToServerButton;
+    public TextMeshPro LatText;
+    public TextMeshPro LngText;
+    public TextMeshPro HeadingText;
     public TextMeshPro StatusText;
-    public string foundIP = " 000.000.000.000";
+
 
     private void Start()
     {
         instance = this;
 
-        // IPText.text = $"Available Server IP: {foundIP}";
-        // StatusText.text = "Connection Status: Not Connected";
-    }
-    public void ServerSearch()
-    {
-        Debug.Log("Searching for servers....");
-        IPText.text = $"Available Server IP: .........";
-        StatusText.text = "Connection Status: Searching...";
+        LatText.text = "Lat: ";
+        LngText.text = "Lng: ";
+        HeadingText.text = "Heading: ";
+        StatusText.text = "";
     }
 
     public void ServerConnect()
     {
-        Debug.Log("Connection to server....");
-        IPText.text = $"Available Server IP: .........";
-        StatusText.text = "Connection Status: Connecting...";
+        NetworkManager.instance.ConnectToUDPServer();
+        //set user type
+        NetworkManager.instance.SetUserType("client");
+        ConnectToServerButton.SetActive(false);
+
+
+
+
     }
 }

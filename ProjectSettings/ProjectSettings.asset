@@ -133,8 +133,9 @@ PlayerSettings:
     Others: 1
   bundleVersion: 0.1
   preloadedAssets:
-  - {fileID: -2185510156362015918, guid: 78ec36bde218cb14ab9662dcf7633909, type: 2}
   - {fileID: 6952339775345857674, guid: 6860264b003abed42a881263befbf83f, type: 2}
+  - {fileID: -2185510156362015918, guid: 78ec36bde218cb14ab9662dcf7633909, type: 2}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -629,7 +630,7 @@ PlayerSettings:
   platformCapabilities:
     WindowsStoreApps:
       GazeInput: True
-      Location: True
+      Location: False
       PrivateNetworkClientServer: True
       InternetClientServer: True
       SpatialPerception: True
